@@ -3,6 +3,8 @@
 
 This is an implementation of Conway's Game of Life in which cells manage themselves locally as opposed to globally.
 
+If you don't know what Conway's Game of Life is, here's the [wiki](https://conwaylife.com/wiki/Conway%27s_Game_of_Life).
+
 ## Instructions
 
 Just run main.py to simulate the GameOfLife, you may need to have python installed. 
