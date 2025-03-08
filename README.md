@@ -17,7 +17,7 @@ The variables defined in the first few lines of main() in main.py are adjustable
 
 Most implementations of the Game of Life I've seen use a shared grid structure that's responsible for managing cells and rules. This implementation offloads that to the cells, which are each only given information from their immediate neighbors. This reflects an interesting aspect of the Game of Life, which is that all of the intricacies of the game arise emergently out of simple rules which apply only on a local scale. I find this implementation of the game to be more mathematically satisfying.
 
-Cells only exist if they're alive or are directly adjacent to a living cell. Each cell will notify their neighbors when they change state. When a cell becomes alive they will generate cells next themselves if necassary.
+Cells only exist if they're alive or are directly adjacent to a living cell. Each cell will notify their neighbors when they change state. When a cell becomes alive they will generate cells next to themselves if necassary.
 
 Only 2 aspects of the simulation are managed globally:
 - A hashmap of weak references to all cells that currently exist. This is necassary so that cells can lookup if a cell already exists before generating a new cell. 
