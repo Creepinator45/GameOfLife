@@ -7,9 +7,9 @@ If you don't know what Conway's Game of Life is, here's the [wiki](https://conwa
 
 ## Instructions
 
-Just run main.py to simulate the GameOfLife, you may need to have python installed. 
+Just run main.py to simulate the GameOfLife, you may need to install python. 
 
-To input your own startin cell arrangement see the demoStartingCellsFile for instructions on the file should be formatted. 
+To input your own starting cell arrangement see the demoStartingCellsFile for instructions on the file should be formatted. 
 
 The variables defined in the first few lines of main() in main.py are adjustible parameters. Change them to add the path to your own starting cells file or change simulation parameters.
 
