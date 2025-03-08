@@ -1,0 +1,18 @@
+-----------------x
+----------------x--x
+-----------------xxx
+-----------------x--x
+
+xx----------------x
+-x----------------x
+------------------x
+
+
+
+
+
+
+
+-------------------xxx
+-----------xxx-----
+#this file contains the same cell arrangement as in demoStartingCellsFile.txt

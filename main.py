@@ -1,6 +1,7 @@
 from weakref import WeakValueDictionary
-from typing import Optional, Sequence
+from typing import Optional, Sequence, TextIO
 from time import sleep
+from os import path
 
 class Cell:
     allCells: dict[tuple[int, int], "Cell"] = WeakValueDictionary()
@@ -138,17 +139,41 @@ class Cell:
         
         return outputStr
 
-def main():
-    startingCells = [(0,0), (0,1), (0,-1), (-1,0), (1, -1)]
-    Cell.birthCells(startingCells)
-    Cell.doActiveDeletion = True
+def readFromFile(file: TextIO) -> Sequence[tuple[int, int]]:
+    output = []
+    rowNum = 0
+    for line in file.readlines():
+        if line[0] == "#":
+            continue
 
+        line = "".join(line.split())
+        for colNum, char in enumerate(line):
+            match char:
+                case "#":
+                    break
+                case "x":
+                    output.append((rowNum, colNum))
+        rowNum += 1
+    return output
+
+def main():
+    #parameters to change
+    startingCellsFilePath = "demoStartingCellsFile.txt"
+    Cell.doActiveDeletion = True
+    waitTime: int = 0.5
+
+    with open(path.normpath(startingCellsFilePath), "r") as startingCellsFile:
+        startingCells = readFromFile(startingCellsFile)
+    Cell.birthCells(startingCells)
+    
+    iteration = 0
     while True:
-        print("----------------------------------------------")
+        print(f"iteration: {iteration} ---------------------------------")
         print(Cell.reprGrid())
         Cell.planGrid()
         Cell.updateGrid()
-        sleep(1)
+        sleep(waitTime)
+        iteration += 1
 
 if __name__ == '__main__':
     main()

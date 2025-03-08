@@ -1,0 +1,24 @@
+#lines beginning with "#" will be ignored
+#
+#"x" indicates a living cell
+-----------------x
+#the number of characters to the left of the cell indicate it's position in x
+----------------x--x #anything after a "#" will be ignored
+----------- -   - - ---xxx #white space characters will be ignored
+aslkhastkasjlthkgxwex #filler characters can be anything accept for white space, "x", or "#"
+
+#blank lines will be counted as lines without any live cells in them
+xx----------------x
+-x----------------x
+------------------x
+
+This line isn't a comment, but because there's no live cells in it it's treated as blank
+
+ #white space isn't removed until after the line is checked whether to be skipped or not. So this line isn't skipped, it's counted as a blank line
+#but this line will be skipped
+
+
+
+-------------------xxx
+-----------xxx----- #these trailing filler characters weren't necassary, but they helped with counting out spacing relative to the line above
+#the starting cell arangement in this file is a methuselah called Justyna https://conwaylife.com/wiki/Justyna
